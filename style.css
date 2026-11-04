@@ -1,0 +1,149 @@
+/* Giao diện đơn giản, không dùng màu nền cho bảng/tiêu đề */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+.page-light { background: #f3f3f7; }
+.page-quiz  { background: #3b3c47; min-height: 100vh; }
+
+/* Thanh đầu trang */
+.site-header {
+  background: #3b3c47;
+  padding: 12px 0;
+}
+.site-header .brand {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav-links a {
+  color: #dcdcea;
+  text-decoration: none;
+  margin-left: 18px;
+}
+.nav-links a:hover { color: #fff; text-decoration: underline; }
+
+.site-footer {
+  padding: 20px 0;
+  color: #666;
+  border-top: 1px solid #ddd;
+  margin-top: 30px;
+}
+
+/* Ô ảnh xe: nếu ảnh không tải được thì hiện ô xám có tên xe */
+.bike-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #d9d9e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.bike-img span { color: #666; font-size: 14px; text-align: center; padding: 8px; }
+.bike-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bike-img.big { aspect-ratio: 16 / 10; }
+
+.price { font-size: 1.25rem; font-weight: bold; }
+
+/* Trang danh sách */
+.bike-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bike-card .body { padding: 12px; flex: 1; display: flex; flex-direction: column; }
+.bike-card h3 { font-size: 1.05rem; margin: 0 0 4px; }
+.bike-card .meta { color: #666; font-size: 14px; margin-bottom: 6px; }
+.bike-card .desc { font-size: 14px; flex: 1; }
+.filters .btn { margin-right: 6px; margin-bottom: 6px; }
+
+/* Trắc nghiệm: cột giữa sáng trên nền tối, giống ảnh mẫu */
+.quiz-wrap { padding: 28px 12px 40px; }
+.quiz-col {
+  max-width: 440px;
+  margin: 0 auto;
+  background: #d4d3e6;
+  padding: 26px 22px 18px;
+  min-height: 560px;
+}
+.quiz-title {
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #3a3a44;
+  margin: 8px 0 26px;
+}
+.quiz-q {
+  text-align: center;
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+.quiz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.tile {
+  aspect-ratio: 1 / 1;
+  background: #8a8a9e;
+  color: #fff;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+.tile:hover { background: #75758a; }
+.tile:focus-visible { outline: 3px solid #3b3c47; outline-offset: 2px; }
+
+.quiz-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
+}
+.link-btn {
+  background: none;
+  border: 0;
+  color: #3b3c47;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Kết quả */
+.result-main { background: #fff; padding: 12px; margin-bottom: 14px; }
+.result-main h2 { font-size: 1.25rem; margin: 12px 0 4px; }
+.result-note { font-size: 14px; color: #444; margin: 6px 0; }
+.result-small {
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  padding: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+.result-small .bike-img { width: 96px; flex: none; aspect-ratio: 4 / 3; }
+.result-small .t { font-size: 14px; }
+.result-small a { font-weight: bold; color: #222; }
+.result-actions { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+
+@media (max-width: 480px) {
+  .quiz-title { font-size: 1.6rem; }
+}
